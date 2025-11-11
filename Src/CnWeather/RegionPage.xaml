@@ -1,0 +1,88 @@
+﻿<Page
+    x:Class="CnWeather.RegionPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CnWeather"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <ImageBrush x:Key="RainyBrush" ImageSource="/Assets/SunnyBackground.jpg" Stretch="UniformToFill" Opacity="0.5" />
+    </Page.Resources>
+
+    <Grid Background="{StaticResource RainyBrush}">
+        <StackPanel>
+            <TextBlock Text="| Welcome!" FontSize="72" Foreground="White" Margin="0,0,0,2" FontWeight="ExtraLight"/>
+            <TextBlock Text="   | Choose Your Desired Region:" FontSize="24" Foreground="White" Margin="0,0,0,20"/>
+            <ListView x:Name="RegionSelector"
+                Width="470"
+                Height="400"
+                FontSize="24"
+                Margin="0,0,1,0"
+                SelectionMode="Single"
+                ScrollViewer.VerticalScrollBarVisibility="Visible">
+
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="Padding" Value="2,2"/>
+                        <Setter Property="Margin" Value="0,1,0,1"/>
+                    </Style>
+                </ListView.ItemContainerStyle>
+
+                <!-- Asia -->
+                <ListViewItem Content="Hong Kong"/>
+                <ListViewItem Content="Tokyo"/>
+                <ListViewItem Content="Beijing"/>
+                <ListViewItem Content="Seoul"/>
+                <ListViewItem Content="Bangkok"/>
+                <ListViewItem Content="Singapore"/>
+                <ListViewItem Content="Jakarta"/>
+                <ListViewItem Content="Manila"/>
+                <ListViewItem Content="Mumbai"/>
+                <ListViewItem Content="Dubai"/>
+                <ListViewItem Content="Moscow"/>
+                <ListViewItem Content="Kyiv"/>
+
+                <!-- Europe -->
+                <ListViewItem Content="London"/>
+                <ListViewItem Content="Paris"/>
+                <ListViewItem Content="Berlin"/>
+                <ListViewItem Content="Rome"/>
+                <ListViewItem Content="Madrid"/>
+                <ListViewItem Content="Amsterdam"/>
+                <ListViewItem Content="Vienna"/>
+                <ListViewItem Content="Prague"/>
+                <ListViewItem Content="Stockholm"/>
+                <ListViewItem Content="Zurich"/>
+
+                <!-- North America -->
+                <ListViewItem Content="New York"/>
+                <ListViewItem Content="Los Angeles"/>
+                <ListViewItem Content="Toronto"/>
+                <ListViewItem Content="Chicago"/>
+                <ListViewItem Content="San Francisco"/>
+                <ListViewItem Content="Vancouver"/>
+                <ListViewItem Content="Mexico City"/>
+
+                <!-- South America -->
+                <ListViewItem Content="São Paulo"/>
+                <ListViewItem Content="Buenos Aires"/>
+                <ListViewItem Content="Lima"/>
+                <ListViewItem Content="Bogotá"/>
+
+                <!-- Africa -->
+                <ListViewItem Content="Cape Town"/>
+                <ListViewItem Content="Nairobi"/>
+                <ListViewItem Content="Cairo"/>
+                <ListViewItem Content="Lagos"/>
+
+                <!-- Oceania -->
+                <ListViewItem Content="Sydney"/>
+                <ListViewItem Content="Melbourne"/>
+                <ListViewItem Content="Auckland"/>
+            </ListView>
+            <Button Content="Confirm" Click="Confirm_Click" Margin="0,20,0,0"/>
+        </StackPanel>
+    </Grid>
+</Page>

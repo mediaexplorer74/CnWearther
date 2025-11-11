@@ -1,0 +1,105 @@
+﻿<Page
+    x:Class="CnWeather.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CnWeather"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <ImageBrush x:Key="RainyBrush" ImageSource="/Assets/RainyBackground.jpg" Stretch="UniformToFill" Opacity="0.5"/>
+    </Page.Resources>
+
+    <Grid x:Name="LayoutRoot" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <!-- Pivot Control instead of Panorama -->
+        <Pivot x:Name="MainPivot" Title="cnweather" Background="{StaticResource RainyBrush}">
+            <!-- Weather Section -->
+            <PivotItem Header="Weather">
+                <Grid Margin="20">
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top">
+                        <TextBlock Text="Current Weather:" FontSize="24" FontWeight="Bold" Margin="0,0,0,2" 
+                                   HorizontalAlignment="Left" Height="29" Width="233" />
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Image x:Name="WeatherIcon" Width="100" Height="100" Margin="0,0,2,0"/>
+                            <StackPanel VerticalAlignment="Center" Width="259" Height="100">
+                                <TextBlock x:Name="CityText" FontSize="18" FontWeight="Bold" Margin="0,0,0,1"/>
+                                <TextBlock x:Name="TempText" FontSize="18" Margin="0,5"/>
+                                <TextBlock x:Name="ConditionText" FontSize="12" Margin="0,5"/>
+                                <TextBlock x:Name="HumidityText" FontSize="12"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </PivotItem>
+
+            <!-- Forecast Section -->
+            <PivotItem Header="Forecast">
+                <StackPanel Margin="20">
+                    <TextBlock Text="3-Day Forecast" FontSize="24" FontWeight="Bold" Margin="0,0,0,20"/>
+                    <!-- Day 1 -->
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                        <Image x:Name="ForecastIcon1" Width="64" Height="64" Margin="0,0,20,0"/>
+                        <StackPanel>
+                            <TextBlock x:Name="ForecastDate1" FontSize="22" FontWeight="Bold"/>
+                            <TextBlock x:Name="ForecastTemp1" FontSize="20"/>
+                            <TextBlock x:Name="ForecastText1" FontSize="20"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <!-- Day 2 -->
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                        <Image x:Name="ForecastIcon2" Width="64" Height="64" Margin="0,0,20,0"/>
+                        <StackPanel>
+                            <TextBlock x:Name="ForecastDate2" FontSize="18" FontWeight="Bold"/>
+                            <TextBlock x:Name="ForecastTemp2" FontSize="16"/>
+                            <TextBlock x:Name="ForecastText2" FontSize="16"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <!-- Day 3 -->
+                    <StackPanel Orientation="Horizontal">
+                        <Image x:Name="ForecastIcon3" Width="64" Height="64" Margin="0,0,20,0"/>
+                        <StackPanel>
+                            <TextBlock x:Name="ForecastDate3" FontSize="18" FontWeight="Bold"/>
+                            <TextBlock x:Name="ForecastTemp3" FontSize="16"/>
+                            <TextBlock x:Name="ForecastText3" FontSize="16"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </PivotItem>
+
+            <!-- Mood Match Section -->
+            <PivotItem Header="Mood Match">
+                <StackPanel Margin="20">
+                    <TextBlock Text="Today's Vibe" FontSize="24" FontWeight="Bold" Margin="0,0,0,20"/>
+                    <TextBlock x:Name="MoodOutput" FontSize="19" Text="Loading mood..." TextWrapping="Wrap" Height="44" Width="382" />
+                </StackPanel>
+            </PivotItem>
+            <PivotItem Header="About App">
+                <ScrollViewer Margin="20" Height="474" Width="380">
+                    <StackPanel>
+                        <TextBlock Text="App Version: Preview 1.0" FontSize="24" FontWeight="ExtraLight" Margin="0,5"/>
+                        <TextBlock Text="Update: Preview CNWeather1" FontSize="24" FontWeight="ExtraLight" Margin="0,0,5,0"/>
+                        <TextBlock Text="Support: https://t.me/W7Mobile" FontSize="24" FontWeight="ExtraLight" Margin="0,0,0,5"/>
+                        <TextBlock Text="CNWeather for Windows Phone 7+" FontSize="24" FontWeight="ExtraLight" Margin="0,0,0,5"/>
+                        <TextBlock Text="" FontSize="24" FontWeight="ExtraLight" Margin="0,0,5,0"/>
+                        <TextBlock Text="Developed by:" FontSize="24" FontWeight="ExtraLight" Margin="0,0,0,5"/>
+                        <TextBlock Text="ChockingNetDude" FontSize="24" FontWeight="ExtraLight" Margin="0,0,0,5"/>
+                        <TextBlock Text="" FontSize="24" FontWeight="ExtraLight" Margin="0,5"/>
+                        <TextBlock Text="Need Support / Bugs? email us:" FontSize="24" FontWeight="ExtraLight" Margin="0,0,0,5"/>
+                        <TextBlock Text="droidjacks4@gmail.com" FontSize="24" FontWeight="ExtraLight" Margin="0,0,0,5"/>
+                        <TextBlock Text="Telegram@chockingnetdude" FontSize="24" FontWeight="ExtraLight" Margin="0,0,0,5"/>
+                        <TextBlock Text="" FontSize="24" FontWeight="ExtraLight" Margin="0,0,5,0"/>
+                        <TextBlock Text="Make Windows Phone 7 alive again" FontSize="24" FontWeight="ExtraLight" Margin="0,0,0,5" Height="27" Width="376" />
+                        <TextBlock Text="-ChockingNetDude" FontSize="16" FontWeight="ExtraLight" Margin="0,0,0,5" Height="30" Width="377" />
+                    </StackPanel>
+                </ScrollViewer>
+            </PivotItem>
+        </Pivot>
+
+        <!-- Command Bar instead of Application Bar -->
+        <CommandBar VerticalAlignment="Bottom">
+            <AppBarButton Icon="Refresh" Label="Your Region" Click="ChangeRegion_Click"/>
+        </CommandBar>
+    </Grid>
+</Page>
