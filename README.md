@@ -1,50 +1,54 @@
 # CnWeather 1.0 - main branch
 
-!\[CnWeather](Images/logo.png)
+![CnWeather](Images/logo.png)
 
 
 
-* My quick and dirty port of WP7 CnWeather app for UWP (Universal Windows Platform).
+My quick and dirty port of WP7 CnWeather app for UWP (Universal Windows Platform).
 
 
 
-\## Screenshots
+## Screenshots
 
-!\[](Images/sshot01.png)
+![](Images/sshot01.png)
 
-!\[](Images/sshot02.png)
+![](Images/sshot02.png)
 
-!\[](Images/sshot03.png)
-
-
-
-## \## Features
-
-* World regions
-* Current weather
-* Weather forecast
-* Background tasks (agent)
+![](Images/sshot03.png)
 
 
 
-\## References
+## Features
 
-* ChockingNetDude (Telegram@chockingnetdude)
+- World regions
+
+- Current weather
+
+- Weather forecast
+
+- Background tasks (agent)
 
 
 
-\## Main goal
+## References
 
-* Background tasks exploring (exploration) and using for LunaVK, etc.
+- ChockingNetDude (Telegram@chockingnetdude)
 
 
 
-\## .
+## Main goal
+
+- Background tasks exploring (exploration) and using for LunaVK, etc.
+
+
+
+## .
 
 As is. No support. Educational purposes only. DIY.
 
 
 
-\## ..
+## ..
 
-* \[m]\[e] 2025
+[m]\[e] 2025
+
