@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace MiniJSON
+namespace CnWeatherAgent//MiniJSON
 {
   public static class Json
   {

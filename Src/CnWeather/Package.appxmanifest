@@ -44,13 +44,17 @@
         <uap:InitialRotationPreference>
           <uap:Rotation Preference="landscape"/>
           <uap:Rotation Preference="portrait"/>
-          <uap:Rotation Preference="landscapeFlipped"/></uap:InitialRotationPreference>
+          <uap:Rotation Preference="landscapeFlipped"/>
+          <uap:Rotation Preference="portraitFlipped"/></uap:InitialRotationPreference>
       </uap:VisualElements>
       <Extensions>
-          <uap3:Extension Category="windows.appService" EntryPoint="CnWeatherAgent.WeatherAgent" Executable="CnWeatherAgent.exe">
-            <uap3:AppService Name="WeatherAgentService" />
-         </uap3:Extension>
+        <Extension Category="windows.backgroundTasks" EntryPoint="CnWeatherAgent.WeatherAgent">
+          <BackgroundTasks>
+            <Task Type="timer"/>
+          </BackgroundTasks>
+        </Extension>
       </Extensions>
+      
     </Application>
   </Applications>
 
@@ -58,6 +62,6 @@
     <Capability Name="internetClient" />
     <uap:Capability Name="removableStorage"/>
     
-  </Capabilities> 
+  </Capabilities>
  
 </Package>
